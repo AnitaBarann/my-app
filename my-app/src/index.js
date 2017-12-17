@@ -4,12 +4,24 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import AppFirebase from "./AppFirebase";
+import Task11 from "./Task11";
+import Task12 from "./Task12";
+import Task13 from "./Task13";
+import Push from "./Push";
+
 
 ReactDOM.render(
     <div>
-        <AppFirebase />
-        <hr />
-        <App />
+        <Push/>
+        <hr/>
+        <Task13/>
+        <hr/>
+        <Task12/>
+        <hr/>
+        <Task11/>
+        <hr/>
+        <AppFirebase/>
+        <hr/>
+        <App/>
     </div>, document.getElementById('root'));
-
 registerServiceWorker();

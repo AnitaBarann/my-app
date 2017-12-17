@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 class App extends Component {
 
     state = {
-        response: 'No response yet'
+        response: {}
     };
 
     getHandler = () => {
@@ -70,8 +70,27 @@ class App extends Component {
                 <button onClick={this.deleteHandler}>Delete data from our end point</button>
 
                 <p>
-                    {this.state.response}
+                   {JSON.stringify(this.state.response)}
                 </p>
+                <div>
+                    {
+                        Object.entries(this.state.response)
+                            .map(([key, value]) => (
+                                <p
+                                    key={key}
+                                    style={
+                                        value.active ?
+                                            {backgroundColor: 'green'}
+                                            :
+                                            {backgroundColor: 'red'}
+                                    }
+                                >
+                                    {value.name + ' ' + value.lastname}
+                                </p>
+                            ))
+                    }
+                </div>
+
             </div>
         );
     }
